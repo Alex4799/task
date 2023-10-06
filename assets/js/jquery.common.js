@@ -38,6 +38,10 @@ function next_toggleSlide() {
     $t.removeClass('on');
     $target.slideUp();
   } else {
+    if ($('.jq-nextToggleSlide').hasClass('on')) {
+      $('.on').next().slideUp()
+      $('.on').removeClass('on');
+    }
     $t.addClass('on');
     $target.slideDown();
   }
